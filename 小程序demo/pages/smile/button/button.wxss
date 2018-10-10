@@ -1,0 +1,4 @@
+/* pages/smile/button/button.wxss */
+view,button{
+  margin: 10px;
+}

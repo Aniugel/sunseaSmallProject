@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<style type="text/css">
+	body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+	#allmap {width: 100%; height:500px; overflow: hidden;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=G3GKeZsowwfaOlY71VAd0TfR"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<title>鼠标绘制工具</title>
+</head>
+<style type="text/css">
+	.make{
+		position: absolute;
+		top: 0;
+		margin: 20px;
+		border: 2px solid dodgerblue;
+		border-radius: 4px;
+		height: 30px;
+	}
+	.make input{
+		border: none;
+		height: 28px;
+		width: 60px;
+		float: left;
+		padding-left: 10px;
+		outline:none;
+	}
+	.make span{
+		display: block;
+		line-height: 30px;
+		padding:0 20px;
+		background-color: #fff;
+		float: left;
+	}
+	.make button{
+		height: 30px;
+		background-color: dodgerblue;
+		color: #fff;
+		border: none;
+		outline: none;
+	}
+</style>
+<body>
+	<div id="allmap">
+		
+	</div>
+	<div class="make">
+		<input type="text" name="" id="" value="" placeholder="请输入围栏半径"/>
+		<span>m</span>
+	    <button>确认</button>
+	</div>
+	
+	
+</body>
+<script type="text/javascript">
+				var map = new BMap.Map("allmap");            // 创建Map实例
+				var mPoint = new BMap.Point(116.404, 39.915);  
+				map.enableScrollWheelZoom();
+				map.centerAndZoom(mPoint,15);
+				var abc;
+			function makePoint(e){
+				var lng=e.point.lng;
+				var lat=e.point.lat;
+				var Point = new BMap.Point(lng,lat); 
+				var marker = new BMap.Marker(Point); 
+				map.addOverlay(marker);
+				abc = Point;
+//				return Point;
+			}
+//			console.log(makePoint(Point))
+
+			function makeCircle(){
+				console.log(abc)
+				
+				var v=$('input').val();
+				var circle = new BMap.Circle(abc,v,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+		    		map.addOverlay(circle);
+//		    		console.log(circle);
+			};
+//			var point;
+			map.addEventListener("click", function(e){
+				makePoint(e);
+//				console.log(abc)
+			});
+//			console.log(point)
+			document.querySelector('button').addEventListener("click", function(){
+				makeCircle()
+			});
+</script>
+</html>
+

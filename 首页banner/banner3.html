@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--<link rel="stylesheet" href="css/base.css" />-->
+		<link rel="stylesheet" href="css/animate.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	</head>
+	<style type="text/css">
+		html,body{background-color: #000;}
+		*{
+		padding: 0;
+		margin: 0;
+		}
+		.banner{
+			width:400px;
+			height: 400px;
+			padding: 100px;
+			border: 2px solid white;
+			/*margin: 0 auto;*/
+			position: relative;
+		}
+		.banner ul{
+				width: 400px;
+				height: 400px;
+				border-radius: 50%;
+				display: block;
+				animation-delay: 1.2s;
+				-ms-animation-delay: 1.2s;
+				-webkit-animation-delay: 1.2s;
+				-moz-animation-delay: 1.2s;
+				/*border: 1px solid #fff;*/
+				}
+				.banner .circle{
+					position: absolute;	
+					width: 400px;
+					height: 400px;
+					border-radius: 50%;
+					border: 1px solid red;
+					
+				}
+				.banner ul li{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 100px;
+				display: block;
+				border: 1px solid #fff;
+				background-color: black;
+				color: white;
+				}
+				/*.banner ul.on{
+				border: 1px solid #fff;
+				}*/
+		.banner .center{
+		position: absolute;
+		left: 200px;
+		top: 180px;
+		}
+		.banner .one{
+			left: 80px;
+			top: 135px;
+		}
+		.banner .one:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 100px;
+			height: 1px;
+			left: 90px;
+			top: 0;
+			transform: rotate(330deg);
+			/*border-radius: 50%;*/
+		}
+		.banner .two{
+			left: 250px;
+			top: 50px;
+			animation-delay: .2s;
+			-ms-animation-delay: .2s;
+			-webkit-animation-delay: .2s;
+			-moz-animation-delay: .2s;
+		}
+		.banner .two:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 80px;
+			height: 1px;
+			left: 92px;
+			top: 90px;
+			transform: rotate(30deg);
+		}
+		.banner .three{
+			left: 410px;
+			top: 135px;
+			animation-delay: .4s;
+			-ms-animation-delay: .4s;
+			-webkit-animation-delay: .4s;
+			-moz-animation-delay: .4s;
+		}
+		.banner .three:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 100px;
+			height: 1px;
+			left: 0px;
+			top: 150px;
+			transform: rotate(90deg);
+		}
+		.banner .four{
+			left: 410px;
+			top: 335px;
+			animation-delay: .6s;
+			-ms-animation-delay: .6s;
+			-webkit-animation-delay: .6s;
+			-moz-animation-delay: .6s;
+		}
+		.banner .four:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 100px;
+			height: 1px;
+			left: -78px;
+			top: 115px;
+			transform: rotate(144deg);
+		}
+		.banner .five{
+			left: 250px;
+			top: 450px;
+			animation-delay: .8s;
+			-ms-animation-delay: .8s;
+			-webkit-animation-delay: .8s;
+			-moz-animation-delay: .8s;
+		}
+		.banner .five:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 104px;
+			height: 1px;
+			left: -90px;
+			top: -8px;
+			transform: rotate(215deg);
+		}
+		.banner .six{
+			left: 80px;
+			top: 335px;
+			animation-delay: 1s;
+			-ms-animation-delay: 1s;
+			-webkit-animation-delay: 1s;
+			-moz-animation-delay: 1s;
+		}
+		.banner .six:after{
+			position: absolute;
+			content: '';
+			display: block;
+			border: 1px solid red;
+			background-color: red;
+			width: 1px;
+			height: 1px;
+			left: 0px;
+			top: -52px;
+			transform: rotate(270deg);
+			transition: width linear 1s; 
+		}
+		.banner .six.on:after{
+			width: 96px;
+		}
+	</style>
+	<body>
+		<div class="banner">
+			<img src="img/cloud.png" class="center"/>
+			<!--<div class="circle  animated bounceInLeft"></div>-->
+			<ul class="">
+				<li class="one animated bounceInLeft">1</li>
+				<li class="two animated bounceInLeft">2</li>
+				<li class="three animated  bounceInLeft">3</li>
+				<li class="four animated  bounceInLeft">4</li>
+				<li class="five animated  bounceInLeft">5</li>
+				<li class="six animated  bounceInLeft">6</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+	$('.banner .six').(function(){
+		$(this).addClass('on');
+	
+	})
+		$('.banner .six').addClass('on');
+//		function demo(){
+//				$('.banner ul').addClass('on');
+//		}
+//		setTimeout('demo()',1500);
+	</script>
+</html>

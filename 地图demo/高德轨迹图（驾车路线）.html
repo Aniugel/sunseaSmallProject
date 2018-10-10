@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>货车路线规划－使用经纬度</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main.css?v=1.0"/>
+<script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.5&key=3e06da24fa764b5f57a0a9c9bb86d4f2&plugin=AMap.TruckDriving'></script> 
+    <style type="text/css">
+        #panel{
+            position: fixed;
+            top:10px;
+            right: 10px;
+            width: 300px;
+        }
+        .amap-lib-marker-mid{
+        	display: none;
+        }
+        .amap-lib-marker-from{
+        	display: none;
+        }
+        .amap-lib-marker-to{
+        	display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="mapContainer"></div>
+<!--<div id="panel"></div>-->
+</div>
+<script type="text/javascript">
+    var map = new AMap.Map("mapContainer", {});
+    var truckOptions = {
+            map: map,
+            policy:0,
+            size:1,
+            city:'beijing',
+//          panel:'panel'
+    };
+    var driving = new AMap.TruckDriving(truckOptions);
+    var path = [];
+    path.push({lnglat:[116.303843, 39.983412]});//起点
+    path.push({lnglat:[116.321354, 39.896436]});//途径
+    path.push({lnglat:[116.341354, 39.996436]});//途径
+    path.push({lnglat:[116.407012, 39.992093]});//终点
+    driving.search(path,function(status, result) {
+            //TODO something
+    });
+</script>
+</body>
+</html>

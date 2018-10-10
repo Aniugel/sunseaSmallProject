@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+</head>
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+<!--<div>
+	经度<input type="text" name="" id="jd" value="0" />
+	纬度<input type="text" name="" id="wd" value="0" />
+	<button onclick="reset()">按钮</button>
+</div>-->
+</body>
+<script type="text/javascript">
+//function reset(){
+//	var v1=document.getElementById("jd").value;
+//	var v2=document.getElementById("wd").value;
+//	var myCenter=new google.maps.LatLng(v1,v2);
+//	function initialize()
+//	{
+//	var mapProp = {
+//	  center:myCenter,
+//	  zoom:6,
+//	  mapTypeId:google.maps.MapTypeId.ROADMAP
+//	  };
+//	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+//	var marker=new google.maps.Marker({
+//	  position:myCenter,
+//	  });
+//	marker.setMap(map);
+//	}
+//	initialize();
+//}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUJciszw4KfnX5zOq0t9Qc15RVir6KOMo&sensor=false"></script>
+<script type="text/javascript" >
+	var myCenter=new google.maps.LatLng(39,116);
+		function initialize()
+		{
+		var mapProp = {
+		center:myCenter,
+		zoom:10,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		var marker=new google.maps.Marker({
+		position:myCenter,
+		});
+		marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</html>

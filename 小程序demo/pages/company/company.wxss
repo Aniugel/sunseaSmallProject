@@ -1,0 +1,68 @@
+/* pages/company/company.wxss */
+.content{
+  width:100%;
+  height: 700px;
+  background-color: #f2f2f2;
+}
+.hr{
+  padding-top: 40px;
+}
+.item{
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  height: 40px;
+  width: 90%;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.item input{
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.holder{
+  font-size: 14px;
+  color: #999;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex input{
+  width: 300px;
+}
+.mobile{
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background-color: #f2f2f2;
+}
+.mobile input{
+  width: 50%;
+  margin-left: 0;
+  padding-left: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  
+}
+.code{
+  border: 1px solid #ccc;
+  height: 40px;
+  width: 35%;
+  position: absolute;
+  right: 5%;
+  background-color: #efeeec;
+  border-radius: 3px;
+  text-align: center;
+  margin-left: 10px;
+  line-height: 40px;
+  color: #999;
+  font-size: 15px;
+}
+.opinion{
+  color: red;
+  text-decoration: underline;
+}

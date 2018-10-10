@@ -1,0 +1,4 @@
+/* pages/smile/picker/picker.wxss */
+view{
+  margin: 10px;
+}

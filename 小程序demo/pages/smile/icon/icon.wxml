@@ -1,0 +1,20 @@
+<!--pages/smile/icon/icon.wxml-->
+<view style='font-size:20px;text-align:center;margin:30px 10px;'>icon有三个属性，size，type，color</view>
+<view class='group'>
+  <view>不同size的icon</view>
+  <block wx:for='{{iconSize}}'>
+    <icon type='success' size='{{item}}'></icon>
+  </block>
+</view>
+<view class='group'>
+  <view>不同type的icon</view>
+  <block wx:for='{{iconType}}'>
+    <icon type='{{item}}' size='50'></icon>
+  </block>
+</view>
+<view class='group'>
+  <view>不同color的icon</view>
+  <block wx:for='{{iconColor}}'>
+    <icon type='success' size='50' color='{{item}}'></icon>
+  </block>
+</view>

@@ -1,0 +1,14 @@
+/* pages/smile/view/view.wxss */
+.ex{
+  height: 200px;
+  width: 200px;
+  font-size: 14px;
+  background-color: rgba(75, 75, 236, 0.644);
+  margin: 40px;
+}
+.on{
+  background-color: rgba(75, 75, 236, 1);
+}
+.li{
+  margin: 10px;
+}

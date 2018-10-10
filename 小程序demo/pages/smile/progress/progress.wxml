@@ -1,0 +1,10 @@
+<!--pages/smile/progress/progress.wxml-->
+<view>
+  <progress percent='20'></progress>
+  <progress percent='40' show-info='true'></progress>
+  <progress percent='30' stroke-width='14'></progress>
+  <progress percent='30' activeColor='blue'></progress>
+  <progress percent='30' color='red' backgroundColor='blue'></progress>
+  <progress percent='30' active='true'></progress>
+  <progress percent='80' active='true'active-mode='forwards'></progress>
+</view>

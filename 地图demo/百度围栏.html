@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eYf9sA6yVTFHlh9ytU4a0EYY"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<title>圆形区域搜索</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$.ajax({
+		url:'http://192.168.8.153:8085/locate/getRail',
+		data:{dsn:'VD64f044960000010'},
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			var lon = data.lon;
+			var lat = data.lat;
+			var radius = data.radius;
+			console.log(radius)
+//			console.log('lon',lon);
+//			console.log('lat',lat);
+			// 百度地图API功能
+			var map = new BMap.Map("allmap");            // 创建Map实例
+			var mPoint = new BMap.Point(lon, lat);  
+			map.enableScrollWheelZoom();
+			map.centerAndZoom(mPoint,15);
+		
+			var circle = new BMap.Circle(mPoint,radius,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+		    map.addOverlay(circle);
+		    var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, autoViewport: false}});  
+//		    local.searchNearby('博物馆',mPoint,2000);
+			var marker = new BMap.Marker(mPoint);  // 创建标注
+			map.addOverlay(marker); // 
+		},
+		error:function(msg){
+			alert(JSON.stringify(msg));
+		}
+	});
+</script>
+

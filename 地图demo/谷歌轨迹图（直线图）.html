@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUJciszw4KfnX5zOq0t9Qc15RVir6KOMo&sensor=false"></script>
+		<title></title>
+	</head>
+	<body onload="initialize()">
+	    <form id="form1" runat="server">
+	    		<div id="map_canvas" style="width:1000px; height:700px;"></div>
+	    </form>
+	</body>
+	</body>
+	<script type="text/javascript">
+		var start=new google.maps.LatLng(39.964556,116.274834);
+        var p2=new google.maps.LatLng(39.956662,116.275735);
+        var p3=new google.maps.LatLng(39.957221,116.284447);
+		var p4=new google.maps.LatLng(39.95834,116.29406);
+        var p5=new google.maps.LatLng(39.959326,116.29951);
+		var p6=new google.maps.LatLng(39.960083,116.303029);
+		var end=new google.maps.LatLng(39.96209,116.307793);
+        function initialize() {
+            var myOptions = {
+                zoom: 14,
+                center: start,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            var marker=new google.maps.Marker({
+				position:start,
+			});
+			marker.setMap(map);
+			var marker=new google.maps.Marker({
+				position:end,
+			});
+			marker.setMap(map);
+			var marker=new google.maps.Marker({
+				position:p2,
+			});
+			marker.setMap(map);
+			var marker=new google.maps.Marker({
+				position:p3,
+			});
+			marker.setMap(map);
+			var marker=new google.maps.Marker({
+				position:p4,
+			});
+			marker.setMap(map);
+        	// 这里填上轨迹的经纬坐标，或者ajax从后台读取
+	    // 坐标最好是在路口的，不然画线不在路上。
+            var trackPoints = [
+                new google.maps.LatLng(39.964556,116.274834),
+                new google.maps.LatLng(39.956662,116.275735),
+                new google.maps.LatLng(39.957221,116.284447),
+                new google.maps.LatLng(39.95834,116.29406),
+                new google.maps.LatLng(39.959326,116.29951),
+				new google.maps.LatLng(39.960083,116.303029),
+				new google.maps.LatLng(39.96209,116.307793)
+            ];
+            
+            var trackPath = new google.maps.Polyline({
+                path: trackPoints,
+                strokeColor: "#FF0000", // 线条颜色
+                strokeOpacity: 1.0, // 线条透明度
+                strokeWeight: 6 ,// 线条粗细
+            });
+
+            trackPath.setMap(map);
+        }
+	</script>
+</html>

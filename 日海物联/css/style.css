@@ -1,0 +1,128 @@
+/*首页*/
+article.oneBg{
+	background:url(../img/banner1.png) no-repeat center;
+	height: 640px;
+	min-width: 1200px;
+}
+article .block{
+	width: 1200px;
+	min-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+article .nav li{
+	float: left;
+	margin-top: 35px;
+}
+article .nav li a{
+	color: #fff;
+}
+article .nav li.btn{
+	margin-left: 30px;
+	line-height: 22px;
+	width: 60px;
+	border: 1px solid #fff;
+	margin-top: 30px;
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-size: 12px;
+	
+}
+.detailBtn{
+	margin-top: 405px;
+	margin-left: 930px;
+	width: 160px;
+	height: 50px;
+	font-size: 18px;
+}
+.twoBg{
+	height: 530px;
+	min-width: 1200px;
+	background-color: #f4f9fa;
+	text-align: center;
+}
+.twoBg ul li{
+	width: 120px;
+	padding: 25px 65px 30px 65px;
+	display: inline-block;
+	background-color: #fff;
+}
+.twoBg ul li.on{
+	border: 1px solid #007bc7;
+	box-shadow: 0 0 10px #007bc7;
+}
+.twoBg ul li button.on{
+	background-color: #007bc7;
+	border: 1px solid #007bc7;
+}
+.twoBg ul li button a.on{
+	color: #fff;
+}
+.cover{
+	display: inline-block;
+	width: 75px;
+	height: 65px;
+	overflow: hidden;
+}
+.cover img.on{
+	margin-top: -65px;
+}
+.slideDown{
+	margin-top: 25px;
+	padding: 25px 120px;
+	text-align: left;
+	height: 210px;
+	background-color: #F5F8FA;
+	display:none;
+}
+.threeBg{
+	width: 100%;
+	height: 560px;
+	min-width: 1200px;
+	background:url(../img/banner2.png) no-repeat center;
+	background-color: #fff;
+}
+.three p.on{
+	color: #007bc7;
+}
+.fourBg{
+	height: 380px;
+	min-width: 1200px;
+	background:url(../img/banner3.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.fiveBg{
+	background: url(../img/banner4.png) no-repeat center;
+	height: 265px;
+	min-width: 1200px;
+	background-size: 100% 100%;
+}
+.footer{
+	background-color: #000;
+	min-width: 1000px;
+	height: 215px;
+	padding: 40px 0;
+	color: #fff;
+}
+.footer ul.floatli{
+	width: 540px;
+	margin-left: 30px;
+}
+.footer ul.floatli>li{
+	float: left;
+	width: 180px;
+	font-size: 12px;
+}
+.footer ul.floatli>li:nth-child(1),
+.footer ul.floatli>li:nth-child(2),
+.footer ul.floatli>li:nth-child(3){
+	font-size: 16px;
+}
+.footer li{  
+	text-align: center;
+	margin-bottom: 20px;
+}
+.footer li a{
+	color: white;
+}

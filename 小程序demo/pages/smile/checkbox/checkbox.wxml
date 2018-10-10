@@ -1,0 +1,13 @@
+<!--pages/smile/checkbox/checkbox.wxml-->
+<checkbox-group>
+<view>color颜色不同</view>
+<checkbox color='red'></checkbox>
+<checkbox color='blue'></checkbox>
+<view>disabled是否禁用</view>
+<checkbox disabled='true'>禁用</checkbox>
+<checkbox >没禁用</checkbox>
+<view>check是否选中</view>
+<checkbox checked='true'>选中</checkbox>
+<checkbox>未选中</checkbox>
+</checkbox-group>
+

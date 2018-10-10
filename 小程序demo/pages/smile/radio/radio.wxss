@@ -1,0 +1,4 @@
+/* pages/smile/radio/radio.wxss */
+radio-group{
+  margin: 10px;
+}

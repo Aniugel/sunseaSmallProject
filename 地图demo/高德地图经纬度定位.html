@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style type="text/css">
+      body,html,#container{
+        height: 100%;
+        margin: 0px
+      }
+     /*.panel {
+        background-color: #ddf;
+        color: #333;
+        border: 1px solid silver;
+        box-shadow: 3px 4px 3px 0px silver;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        line-height: 20px;
+      }
+      #input{
+        width: 250px;
+        height: 25px;
+        border: 0;
+        background-color: white;
+      }*/
+    </style>
+    <title>逆地理编码</title>
+    
+  </head>
+  <body>
+   <div id="container" tabindex="0"></div>
+   <!--<div class ='panel'>
+      <input id = 'input' value = '点击地图显示地址' disabled></input>
+   </div>-->
+   <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.2&key=3e06da24fa764b5f57a0a9c9bb86d4f2"></script>
+   <script type="text/javascript">
+    
+    var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 10,
+            center: [119.39,39.9]
+    });
+    AMap.plugin('AMap.Geocoder',function(){
+        var geocoder = new AMap.Geocoder({
+            city: "010"//城市，默认：“全国”
+        });
+        var marker = new AMap.Marker({
+            map:map,
+            bubble:true
+        })
+        map.on('click',function(e){
+//      	不可移动
+//          marker.setPosition(e.lnglat);
+            geocoder.getAddress(e.lnglat,function(status,result){
+              if(status=='complete'){
+                 document.getElementById('input').value = result.regeocode.formattedAddress
+              }
+            })
+        })
+
+    });
+   </script>
+   <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+  </body>
+</html>

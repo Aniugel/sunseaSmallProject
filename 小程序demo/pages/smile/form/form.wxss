@@ -1,0 +1,4 @@
+/* pages/smile/form/form.wxss */
+view,form,button{
+  margin: 10px;
+}

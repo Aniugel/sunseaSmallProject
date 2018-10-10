@@ -1,0 +1,9 @@
+/* pages/smile/smile.wxss */
+.list{
+  border-bottom:1px solid #eee;
+  line-height: 44px;
+  font-size: 14px;
+  padding: 0 20px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}

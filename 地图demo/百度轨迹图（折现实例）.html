@@ -1,0 +1,67 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+<style type="text/css">
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eYf9sA6yVTFHlh9ytU4a0EYY"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<title>折线</title>
+</head>
+<body>
+<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+$.ajax({
+		url:'http://192.168.7.56:8085/locate/periodLocation',
+		data:{dsn:'VD64f044960000010',startTime:0},
+		type:'get',
+		dataType:'json',
+		success:function(data){
+//			let arr = [
+//			new BMap.Point(114.096, 22.6544),
+//			new BMap.Point(114.076, 22.6544),
+//			new BMap.Point(114.066, 22.6344),
+//			new BMap.Point(114.096, 22.5944),
+//			new BMap.Point(114.136, 22.5944),
+//			];
+			let arr = [];
+			data.forEach(function(item){
+				arr.push(new BMap.Point(item.lon, item.lat));
+			});
+			console.log(data)
+			var map = new BMap.Map("allmap");
+			var m=Math.round((data.length)/2)-1;
+			var point = new BMap.Point(data[m].lon, data[m].lat);
+			map.centerAndZoom(point, 17);
+			map.enableScrollWheelZoom(true);
+			var polyline = new BMap.Polyline(arr, {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+			map.addOverlay(polyline);
+			function addLabel(){
+				 for (i = 0; i < data.length; i ++) {
+					var point = new BMap.Point(data[i].lon, data[i].lat);
+				  	var marker = new BMap.Marker(point);
+				  	map.addOverlay(marker);
+					if (i==0) {
+						var label = new BMap.Label("起点",{offset:new BMap.Size(20,-10)});
+				        marker.setLabel(label);
+					}
+					else if(i==data.length-1){
+						var label = new BMap.Label("终点",{offset:new BMap.Size(20,-10)});
+				        marker.setLabel(label);
+					}
+//					else{
+//						var label = new BMap.Label(i,{offset:new BMap.Size(20,-10)});
+//				        marker.setLabel(label);
+//					}
+					}
+			}
+			addLabel()
+		},
+		error:function(msg){
+			alert(JSON.stringify(msg));
+		}
+	});
+</script>

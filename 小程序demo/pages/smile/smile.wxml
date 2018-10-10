@@ -1,0 +1,35 @@
+<view>
+  <navigator class='list' url='view/view'>
+    <text>view</text><text>></text>
+  </navigator>
+  <!-- <navigator class='list' url='scrollView/scrollView'>
+    <text>scrollView</text><text>></text>
+  </navigator> -->
+  <navigator class='list' url='icon/icon'>
+    <text>icon</text><text>></text>
+  </navigator>
+  <navigator class='list' url='text/text'>
+    <text>text</text><text>></text>
+  </navigator>
+  <navigator class='list' url='progress/progress'>
+    <text>progress</text><text>></text>
+  </navigator>
+  <navigator class='list' url='button/button'>
+    <text>button</text><text>></text>
+  </navigator>
+  <navigator class='list' url='checkbox/checkbox'>
+    <text>checkbox</text><text>></text>
+  </navigator>
+  <navigator class='list' url='form/form'>
+    <text>form</text><text>></text>
+  </navigator>
+  <navigator class='list' url='input/input'>
+    <text>input</text><text>></text>
+  </navigator>
+  <navigator class='list' url='picker/picker'>
+    <text>picker</text><text>></text>
+  </navigator>
+  <navigator class='list' url='radio/radio'>
+    <text>radio</text><text>></text>
+  </navigator>
+</view>

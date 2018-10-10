@@ -1,0 +1,19 @@
+<!--pages/smile/button/button.wxml-->
+<view>
+<view>size尺寸</view>
+<button size='default'>default默认大小</button>
+<button size='mini'>mini小尺寸</button>
+<view>类型type</view>
+<button type='primary'>绿色</button>
+<button type='default'>白色</button>
+<button type='warn'>红色</button>
+<view>form-type表单组件</view>
+<button form-type='submit'>submit</button>
+<button form-type='reset'>reset</button>
+<view>是否镂空</view>
+<button plain='true'>镂空</button>
+<view>是否禁用</view>
+<button disabled='true'>禁用</button>
+<view>名称前是否带loading图标</view>
+<button loading='true'>loading</button>
+</view>

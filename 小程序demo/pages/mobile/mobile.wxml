@@ -1,0 +1,13 @@
+<!--pages/mobile/mobile.wxml-->
+<view class='content'>
+  <view class='numbg'>
+  <view>+86</view>
+     <view><input placeholder='{{inputNumber}}' maxlength='11' bindblur='mobileblur'></input></view>
+  </view>
+  <view class='xieyi'>
+    <icon type='success' color='red' size='18'></icon>
+    <view class='agree'>同意</view>
+    <view class='opinion'>京东用户注册协议</view>
+  </view>
+  <button class='btn' disabled='{{disabled}}' type='{{btnstate}}' bindtap='login'>下一步</button>
+</view>

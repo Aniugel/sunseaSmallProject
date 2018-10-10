@@ -1,0 +1,4 @@
+/* pages/smile/checkbox/checkbox.wxss */
+view{
+  margin: 10px;
+}

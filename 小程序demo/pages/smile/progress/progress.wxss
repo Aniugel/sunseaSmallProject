@@ -1,0 +1,7 @@
+/* pages/smile/progress/progress.wxss */
+view{
+  margin: 20px;
+}
+progress{
+  margin: 10px 0;
+}

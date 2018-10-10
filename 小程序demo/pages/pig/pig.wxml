@@ -1,0 +1,27 @@
+<!--pages/pig/pig.wxml-->
+<view style='background-color:#f7f7ff7;'>
+<view class='main'>
+  <image src='/images/user.jpg'></image>
+  <view>liushenghua</view>
+</view>
+<view class='list'>
+  <navigator>
+    <view><image src='/images/psw.png'></image>修改密码</view>
+    <text>></text>
+  </navigator>
+  <navigator>
+    <view><image src='/images/set.png'></image>设置</view>
+    <text>></text>
+  </navigator>
+  <navigator style='border:none;'>
+    <view><image src='/images/xq.png'></image>详情</view>
+    <text>></text>
+  </navigator>
+</view>
+<view class='list'style='margin-top:20px;'>
+      <navigator url='../login/login'style='border:none;'>
+        <view><image src='/images/quit.png'></image>退出</view>
+        <text>></text>
+      </navigator>
+</view>
+</view>

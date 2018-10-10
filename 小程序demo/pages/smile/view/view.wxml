@@ -1,0 +1,16 @@
+<!--pages/smile/view/view.wxml-->
+<view class='ex' hover-class='on'>
+  在WXML界面里使用view布局，渲染出界面内容
+</view>
+<view class='li'>
+1.hover-class:指定按下去的样式类。当 hover-class="none" 时，没有点击态效果	
+</view>
+<view class='li'>
+2.hover-stop-propagation:指定是否阻止本节点的祖先节点出现点击态
+</view>
+<view class='li'>
+3.hover-start-time:按住后多久出现点击态，单位毫秒	
+</view>
+<view class='li'>
+4.hover-stay-time:手指松开后点击态保留时间，单位毫秒	
+</view>

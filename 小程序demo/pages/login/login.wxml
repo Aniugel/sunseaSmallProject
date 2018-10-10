@@ -1,0 +1,30 @@
+<!--pages/login/login.wxml-->
+<view class='content'>
+  <view class='acount'>
+    <view class='title'>账号</view>
+    <view class='num'>
+      <input placeholder-class='placeholder' bindinput='acountInput' placeholder='{{placeholderAcount}}'></input>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='acount'>
+    <view class='title'>密码</view>
+    <view class='num'>
+      <input placeholder-class='placeholder' bindblur='pwdBlur' placeholder='{{placeholderPassword}}'></input>
+    </view>
+    <view class='see'>
+      <image src='/images/see.jpg'></image>
+    </view>
+  </view>
+  <view class='hr'></view>
+ <navigator url='../pig/pig' open-type='switchTab'><button class='btn'>{{login}}</button></navigator>
+  <view class='operate'>
+    <view><navigator url='../mobile/mobile'>{{phoneRegister}}</navigator></view>
+    <view><navigator url='../company/company'>{{companyRegister}}</navigator></view>
+    <view>{{findPassword}}</view>
+  </view>
+  <view class='login'>
+    <view><image src='/images/wxlogin.png'></image></view>
+    <view><image src='/images/qqlogin.png'></image></view>
+  </view>
+</view>

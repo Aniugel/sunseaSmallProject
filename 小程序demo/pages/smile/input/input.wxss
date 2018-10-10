@@ -1,0 +1,4 @@
+/* pages/smile/input/input.wxss */
+view{
+  margin: 10px;
+}

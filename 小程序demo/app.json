@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/smile/smile",
+    "pages/pig/pig",
+    "pages/mobile/mobile",
+    "pages/company/company",
+    "pages/star/star",
+    "pages/smile/view/view",
+    "pages/smile/scrollView/scrollView",
+    "pages/smile/icon/icon",
+    "pages/smile/text/text",
+    "pages/smile/progress/progress",
+    "pages/smile/button/button",
+    "pages/smile/checkbox/checkbox",
+    "pages/smile/form/form",
+    "pages/smile/input/input",
+    "pages/smile/picker/picker",
+    "pages/smile/radio/radio",
+    "pages/demo/demo"
+  ],
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/smile/smile",
+        "text": "组件",
+        "iconPath": "images/smileOff.png",
+        "selectedIconPath": "images/smileOn.png"
+      },
+      {
+        "pagePath": "pages/star/star",
+        "text": "API",
+        "iconPath": "images/starOff.png",
+        "selectedIconPath": "images/starOn.png"
+      },
+      {
+        "pagePath": "pages/pig/pig",
+        "text": "我的",
+        "iconPath": "images/pigOff.png",
+        "selectedIconPath": "images/pigOn.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTextStyle": "white"
+  }
+}

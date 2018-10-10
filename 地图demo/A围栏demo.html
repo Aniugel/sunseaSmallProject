@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jYNU39RZ3k37NUz1QduizaYD"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+	<link rel="stylesheet" href="https://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+	<title>圆形区域搜索用户数据</title>
+</head>
+<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+<body>
+	<div id="allmap"></div>
+	<!--<input type="button" value="hh" onclick="clearAll()"/>-->
+</body>
+</html>
+<script type="text/javascript">
+	$.ajax({
+		url:'http://192.168.8.153:8085/locate/periodLocation',
+		data:{
+			dsn:'VD64f044960000010',
+			startTime:0
+		},
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			var map = new BMap.Map("allmap");
+			var point = new BMap.Point(data[0].lon, data[0].lat);
+			map.centerAndZoom(point, 17);
+			map.enableScrollWheelZoom(true);
+			var point = new BMap.Point(data[0].lon, data[0].lat);
+			var circle= new BMap.Circle(point,100,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+		    	map.addOverlay(circle);
+			function addMarker(point){
+			  var marker = new BMap.Marker(point);
+			  map.addOverlay(marker);
+			  marker.addEventListener("click",attribute);
+			}
+			for (i = 0; i < data.length; i ++) {
+				var point = new BMap.Point(data[i].lon, data[i].lat);
+				addMarker(point);
+			};
+			function attribute(e){
+				var p = e.target.getPosition();
+				var lng=p.lng;
+				var lat=p.lat;
+				var drawingManager = new BMapLib.DrawingManager(map, {
+				isOpen: false, //是否开启绘制模式
+				enableDrawingTool: true, //是否显示工具栏
+				circleOptions: {
+					fillColor:"blue", 
+					strokeWeight: 1 ,
+					fillOpacity: 0.3, 
+					strokeOpacity: 0.3
+		        },
+				drawingToolOptions: {
+					anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+					offset: new BMap.Size(5, 5), //偏离值
+					scale: 0.8, //工具栏缩放比例
+					drawingModes: [
+						BMAP_DRAWING_CIRCLE
+					]
+				}
+			});
+			drawingManager.addEventListener('circlecomplete', function(e) {
+				var radius = parseInt(e.getRadius());
+				var center= e.getCenter();
+				var distance = map.getDistance(center,p); 
+				if (distance>radius) {
+					alert('请求的设备不在围栏中,请重试');
+					var cover=map.getOverlays();
+					var l=cover.length-2;
+			        map.removeOverlay(cover[l]);
+				}else{
+				   $.post('http://192.168.8.153:8085/locate/saveRail',
+				   {dsn: "VD64f044960000010",
+						lat: lat,
+						lon: lng,
+						radius: radius,
+						time: new Date().getTime()
+					},function(data){
+//						console.log(data);
+//						console.log('保存成功！');
+					   },'text');
+				}
+				drawingManager.close();
+				$('.BMapLib_Drawing_panel').hide();
+//				console.log('围栏的半径'+radius+'，设备的经度'+lng+"，设备的纬度"+lat);
+			});
+			}	
+		},
+		error:function(msg){
+			alert(JSON.stringify(msg));
+		}
+	});
+</script>
